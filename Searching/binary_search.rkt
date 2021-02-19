@@ -2,7 +2,6 @@
 
 ;; Also my code submission for LeetCode problem 704
 ;; 46 / 46 test cases passed.
-;; Status: Accepted
 ;; Runtime: 400 ms
 ;; Memory Usage: 128.7 MB
 
