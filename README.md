@@ -1,6 +1,6 @@
-ALGORITHMS in Various Scripting Languages
+# ALGORITHMS in Various Scripting Languages
 
-Data Structures and Algorithms implemented for learning purposes in: 
+**Data Structures and Algorithms** implemented for learning purposes in: 
 
 - Python3
 - Haskell

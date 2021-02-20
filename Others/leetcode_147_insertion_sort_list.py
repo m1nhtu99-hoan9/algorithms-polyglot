@@ -1,5 +1,5 @@
 """
-147. Insertion Sort List
+147. Insertion Sort List (Medium)
 Sort a linked list using insertion sort.
 
 22 / 22 test cases passed.
