@@ -19,12 +19,11 @@ Memory Usage: 126 MB (beats 100% of Racket submission)
   
   {define res null}   ; accumulator for results
 
-  ; Equation for diagonal lines in chess board: `y = k ± x`
-  ; in which gradient `k ∈ (range n)`
-  ; Hence, each unique `k` represents 2 unique diagonal lines
-  {define/contract (solve lst gradsTaken1 gradsTaken2 row cols)
-    ; Set `gradsTaken1` "remembers" all `k` got from  `y + x`
-    ; Set `gradsTaken2` "remembers" all `k` got from `-y + x`
+  ; Equation for diagonal lines in chess board: `y = ±x + k`
+  ; Hence, each distinct y-intercept `k` represents 2 unique diagonal lines
+  {define/contract (solve lst ksTaken1 ksTaken2 row cols)
+    ; Set `ksTaken1` "remembers" all `k` got from  `y + x`
+    ; Set `ksTaken2` "remembers" all `k` got from `-y + x`
     (-> [listof (listof pair?)] set? set? exact-nonnegative-integer? set? void)
     
     [if (= row n)
@@ -32,16 +31,16 @@ Memory Usage: 126 MB (beats 100% of Racket submission)
         (set! res (cons lst res))      
 
         {for ((col (in-set cols))) 
-          {define grad1 (+ col row)}       
-          {define grad2 (- col row)}     
+          {define k1 (+ col row)}       
+          {define k2 (- col row)}     
           (unless [or
-                   (set-member? gradsTaken1 grad1)
-                   (set-member? gradsTaken2 grad2)]
+                   (set-member? ksTaken1 k1)
+                   (set-member? ksTaken2 k2)]
             ; if diagonals not yet taken by qny queens
             (solve
              (cons (cons row col) lst)     
-             (set-add gradsTaken1 grad1)   
-             (set-add gradsTaken2 grad2)    
+             (set-add ksTaken1 k1)   
+             (set-add ksTaken2 k2)    
              (+ row 1)                
              (set-remove cols col)) 
             )
