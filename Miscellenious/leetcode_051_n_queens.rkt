@@ -72,5 +72,3 @@ Memory Usage: 126 MB (beats 100% of Racket submission)
   
   (vector->list mat)
   }
-
-

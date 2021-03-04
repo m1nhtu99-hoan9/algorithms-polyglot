@@ -1,3 +1,4 @@
 *.rkt~
 
+# IDE-specific files/folders
 .vscode
