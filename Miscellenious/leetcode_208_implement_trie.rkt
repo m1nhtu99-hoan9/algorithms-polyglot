@@ -1,12 +1,12 @@
 #lang racket
 
-|#
+#|
 208. Implement Trie (Prefix Tree) (Medium)
 
 15 / 15 test cases passed.
 Runtime: 548 ms (beats 100% of racket submissions)
 Memory Usage: 128.5 MB (beats 100% of racket submissions)
-#|
+|#
 
 {define (char-lower->index c)
   (- [char->integer c]
