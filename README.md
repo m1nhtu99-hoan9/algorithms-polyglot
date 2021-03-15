@@ -7,3 +7,7 @@
 - Python3
 - Haskell
 - Racket 
+
+## TO-DOs
+
+- [ ] Implement `delete` method for `Trie`
