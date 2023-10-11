@@ -7,6 +7,7 @@
 - Python3
 - Haskell
 - Racket 
+- Scala 2.13
 
 ## TO-DOs
 
